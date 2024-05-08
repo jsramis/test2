@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>あなたのサイト名</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navigation {
+            margin: 15px 0;
+            background-color: #343a40;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+        }
+
+        .title img {
+            margin-right: 10px;
+            width: 5%; /* 画像のサイズを元の4分の1に変更 */
+        }
+
+        /* 以下の部分は変更されていません */
+        /* ... */
+    </style>
+    <script>
+        // JavaScriptを使用してドロップダウンメニューの動作を制御します
+        function dropdownMenu(id) {
+            var x = document.getElementById(id);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else { 
+                x.style.display = "none";
+            }
+        }
+
+        // JavaScriptを使用して現在の日時を表示します
+        function showDateTime() {
+            var now = new Date();
+            var dateTime = now.getFullYear() + "-" + (now.getMonth()+1) + "-" + now.getDate() + " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+            document.getElementById("datetime").innerText = dateTime;
+        }
+
+        // ページが読み込まれたときに現在の日時を表示します
+        window.onload = showDateTime;
+    </script>
+</head>
+<body>
+    <div class="navigation">
+        <div class="title">
+            <img src="C:\Users\darbu\OneDrive\デスクトップ\show.png" alt="Logo"> <!-- ここに画像を追加しました -->
+            <h2>横山テストサイト</h2>
+        </div>
+        <div class="dropdowns">
+            <div class="dropdown">
+                <button onclick="dropdownMenu('dropdown1')" class="dropbtn">テスト1 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div id="dropdown1" class="dropdown-content" style="display: none;">
+                    <a href="#">ニュース</a>
+                    <a href="#">事業案内</a>
+                    <a href="#">ウェブサービス</a>
+                </div>
+            </div> 
+            <div class="dropdown">
+                <button onclick="dropdownMenu('dropdown2')" class="dropbtn">テスト2 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div id="dropdown2" class="dropdown-content" style="display: none;">
+                    <a href="#">イベント</a>
+                    <a href="#">クリエイターサポート</a>
+                    <a href="#">教育</a>
+                </div>
+            </div> 
+            <!-- 他のドロップダウンメニューも同様に追加してください -->
+        </div>
+    </div>
+
+    <!-- 問い合わせフォームを追加します -->
+    <div class="contact-form">
+        <h2>お問い合わせ</h2>
+        <form action="/submit_contact" method="post">
+            <label for="name">お名前:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">メールアドレス:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <label for="message">メッセージ:</label><br>
+            <textarea id="message" name="message"></textarea><br>
+            <input type="submit" value="送信">
+        </form>
+    </div>
+
+    <div class="content">
+        <!-- 以下の部分は変更されていません -->
+        <!-- ... -->
+    </div>
+
+    <div class="footer">
+        <!-- JavaScriptを使用して現在の日時を動的に表示します -->
+        <p id="datetime">© あなたのサイト名</p>
+    </div>
+</body>
+</html>
