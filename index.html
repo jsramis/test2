@@ -29,27 +29,6 @@
         /* 以下の部分は変更されていません */
         /* ... */
     </style>
-    <script>
-        // JavaScriptを使用してドロップダウンメニューの動作を制御します
-        function dropdownMenu(id) {
-            var x = document.getElementById(id);
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else { 
-                x.style.display = "none";
-            }
-        }
-
-        // JavaScriptを使用して現在の日時を表示します
-        function showDateTime() {
-            var now = new Date();
-            var dateTime = now.getFullYear() + "-" + (now.getMonth()+1) + "-" + now.getDate() + " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-            document.getElementById("datetime").innerText = dateTime;
-        }
-
-        // ページが読み込まれたときに現在の日時を表示します
-        window.onload = showDateTime;
-    </script>
 </head>
 <body>
     <div class="navigation">
@@ -102,8 +81,8 @@
     </div>
 
     <div class="footer">
-        <!-- JavaScriptを使用して現在の日時を動的に表示します -->
-        <p id="datetime">© あなたのサイト名</p>
+        <!-- PHPを使用して現在の日時を動的に表示します -->
+        <p id="datetime">© あなたのサイト名 <?php echo date('Y-m-d H:i:s'); ?></p>
     </div>
 </body>
 </html>
